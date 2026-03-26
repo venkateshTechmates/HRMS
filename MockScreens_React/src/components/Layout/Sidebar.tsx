@@ -2,7 +2,7 @@ import { NavLink, useLocation } from 'react-router-dom';
 import {
   LayoutDashboard, Users, Clock, CreditCard, Target, Briefcase,
   BookOpen, Shield, UserCircle, BarChart3, ChevronDown, ChevronRight,
-  Building2
+  Building2, Headphones, Award, Settings2, GitBranch, Upload
 } from 'lucide-react';
 import { useState } from 'react';
 
@@ -20,6 +20,7 @@ const navItems: NavItem[] = [
       { label: 'Employee Directory', path: '/employees' },
       { label: 'Org Chart', path: '/employees/org-chart' },
       { label: 'Transfers & Promotions', path: '/employees/transfers' },
+      { label: 'Offboarding', path: '/employees/offboarding' },
     ]
   },
   {
@@ -53,7 +54,21 @@ const navItems: NavItem[] = [
   { label: 'Learning & Dev', path: '/learning', icon: BookOpen },
   { label: 'Compliance', path: '/compliance', icon: Shield },
   { label: 'Self-Service', path: '/self-service', icon: UserCircle },
-  { label: 'Analytics', path: '/analytics', icon: BarChart3 },
+  {
+    label: 'Analytics', icon: BarChart3, children: [
+      { label: 'Analytics Dashboard', path: '/analytics' },
+      { label: 'Workforce Planning', path: '/analytics/workforce' },
+      { label: 'DEI Dashboard', path: '/analytics/dei' },
+    ]
+  },
+  { label: 'Helpdesk', path: '/helpdesk', icon: Headphones },
+  { label: 'Succession Planning', path: '/succession', icon: Award },
+  {
+    label: 'Admin', icon: Settings2, children: [
+      { label: 'Workflow Builder', path: '/admin/workflows' },
+      { label: 'Bulk Operations', path: '/admin/bulk' },
+    ]
+  },
 ];
 
 export default function Sidebar() {

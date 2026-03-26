@@ -5,6 +5,7 @@ import Dashboard from './pages/Dashboard/Dashboard';
 import EmployeeDirectory from './pages/Employees/EmployeeDirectory';
 import OrgChart from './pages/Employees/OrgChart';
 import TransfersPromotions from './pages/Employees/TransfersPromotions';
+import Offboarding from './pages/Employees/Offboarding';
 import Attendance from './pages/Attendance/Attendance';
 import LeaveManagement from './pages/Attendance/LeaveManagement';
 import PayrollProcessing from './pages/Payroll/PayrollProcessing';
@@ -21,6 +22,12 @@ import LMS from './pages/Learning/LMS';
 import PolicyManagement from './pages/Compliance/PolicyManagement';
 import SelfServicePortal from './pages/SelfService/SelfServicePortal';
 import AnalyticsDashboard from './pages/Analytics/AnalyticsDashboard';
+import DEIDashboard from './pages/Analytics/DEIDashboard';
+import WorkforcePlanning from './pages/Analytics/WorkforcePlanning';
+import Helpdesk from './pages/Helpdesk/Helpdesk';
+import SuccessionPlanning from './pages/Succession/SuccessionPlanning';
+import WorkflowBuilder from './pages/Admin/WorkflowBuilder';
+import BulkOperations from './pages/Admin/BulkOperations';
 
 export default function App() {
   return (
@@ -33,6 +40,7 @@ export default function App() {
           <Route path="employees" element={<EmployeeDirectory />} />
           <Route path="employees/org-chart" element={<OrgChart />} />
           <Route path="employees/transfers" element={<TransfersPromotions />} />
+          <Route path="employees/offboarding" element={<Offboarding />} />
 
           {/* Attendance & Leave */}
           <Route path="attendance" element={<Attendance />} />
@@ -65,6 +73,18 @@ export default function App() {
 
           {/* Analytics */}
           <Route path="analytics" element={<AnalyticsDashboard />} />
+          <Route path="analytics/dei" element={<DEIDashboard />} />
+          <Route path="analytics/workforce" element={<WorkforcePlanning />} />
+
+          {/* Helpdesk */}
+          <Route path="helpdesk" element={<Helpdesk />} />
+
+          {/* Succession Planning */}
+          <Route path="succession" element={<SuccessionPlanning />} />
+
+          {/* Admin */}
+          <Route path="admin/workflows" element={<WorkflowBuilder />} />
+          <Route path="admin/bulk" element={<BulkOperations />} />
 
           {/* Fallback */}
           <Route path="*" element={<Navigate to="/" replace />} />
